@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  const Watch_list = sequelize.define("Watch_list", {
+  const WatchList = sequelize.define("WatchList", {
     title: {
       type: DataTypes.STRING(100),
       allowNull: false
@@ -35,4 +35,5 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: false
     }
   });
+  return WatchList;
 };
