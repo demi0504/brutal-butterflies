@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
-  const watchList = sequelize.define("Watch_list", {
+  const watchList = sequelize.define("watchList", {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
