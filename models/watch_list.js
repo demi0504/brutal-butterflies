@@ -1,5 +1,13 @@
+const sequelize = require("sequelize");
+
 module.exports = function(sequelize, DataTypes) {
-  const Watch_list = sequelize.define("Watch_list", {
+  const watchList = sequelize.define("Watch_list", {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false
+    },
     title: {
       type: DataTypes.STRING(100),
       allowNull: false
@@ -35,4 +43,6 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: false
     }
   });
+
+  return watchList;
 };
