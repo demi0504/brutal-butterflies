@@ -37,4 +37,5 @@ db.sequelize.sync().then(() => {
       PORT
     );
   });
+// eslint-disable-next-line prettier/prettier
 });
