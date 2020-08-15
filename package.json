@@ -1,5 +1,9 @@
 {
-  "name": "1-Passport-Example",
+  "name": "brutal-butterflies",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/demi0504/brutal-butterflies.git"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
