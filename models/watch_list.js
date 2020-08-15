@@ -1,6 +1,4 @@
-const sequelize = require("sequelize");
-const { Sequelize } = require(".");
-const { all } = require("sequelize/types/lib/operators");
+const Sequelize = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
   const watchList = sequelize.define("Watch_list", {
