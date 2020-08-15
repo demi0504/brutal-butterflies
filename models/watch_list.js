@@ -1,4 +1,6 @@
 const sequelize = require("sequelize");
+const { Sequelize } = require(".");
+const { all } = require("sequelize/types/lib/operators");
 
 module.exports = function(sequelize, DataTypes) {
   const watchList = sequelize.define("Watch_list", {
@@ -14,6 +16,18 @@ module.exports = function(sequelize, DataTypes) {
     },
     plot: {
       type: DataTypes.STRING(1000),
+      allowNull: false
+    },
+    genre: {
+      type: DataTypes.string(30),
+      allowNull: false
+    },
+    length: {
+      type: DataTypes.string(30),
+      allowNull: false
+    },
+    actors: {
+      type: DataTypes.string(1000),
       allowNull: false
     },
     poster: {
@@ -41,6 +55,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     }
   });
 
