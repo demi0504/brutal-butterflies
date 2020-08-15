@@ -9,15 +9,15 @@
 
 ### ✨ [Demo]( )
 
-## Install
+## :arrow_down: Install 
 
 ## Usage
 
-## Run tests
+## :computer: Run tests 
 
 'npm run test'
 
-## Future Development 
+## :crystal_ball Future Development 
 
 > Popcorn Bucket List creators plan to offer communitive platform abilities that allow one user to interact with another/multiple user(s), presenting informative overlap between the multiple users' personal movie libraries. The app will contain a "like" feature, a "comment" that presents like a "review" feature, and a "rate this movie" feature.
 
