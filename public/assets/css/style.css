@@ -1,4 +1,8 @@
+body {
+  background-image: url("../images/popcorn_bucketlist.png");
+};
+
 form.signup,
 form.login {
   margin-top: 50px;
-}
+};
