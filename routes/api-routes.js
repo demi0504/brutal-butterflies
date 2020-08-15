@@ -50,4 +50,44 @@ module.exports = function(app) {
       });
     }
   });
+
+  // Route to retrieve all movies on watchlist
+  app.get("/api/unwatched/watchlist", (req, res) => {
+    console.log("unwatched route hit");
+    db.WatchList.findAll({
+      where: {
+        watched: false
+      }
+    }).then(results => {
+      const hbsObject = {
+        movies: results
+      };
+      // Redirect or render here to home/members page
+      res.render("index", hbsObject);
+    });
+  });
+
+  // Route to update movie from unwatched to watched
+  app.put("/api/:id", (req, res) => {
+    console.log("update route hit");
+    db.WatchList.update({
+      watched: true
+    }, {
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(results => {
+        return res.json(results);
+      })
+      .catch(error => {
+        return res.json(error);
+      });
+  });
+
+  // Route to add movie to favorites
+  // Route to show all favorites
+  // app.get("/api/favorites", (req, res) => {
+  //   console.log("favorites route hit");
+  // })
 };
