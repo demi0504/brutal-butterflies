@@ -1,5 +1,7 @@
 body {
   background-image: url("../images/popcorn_bucketlist.png");
+  background-size: 600px;
+
 };
 
 form.signup,
