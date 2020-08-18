@@ -1,6 +1,10 @@
 const Sequelize = require("sequelize");
 module.exports = function(sequelize, DataTypes) {
+<<<<<<< HEAD:models/movie.js
   const Movie = sequelize.define("Movie", {
+=======
+  const watchList = sequelize.define("watchList", {
+>>>>>>> 87dfda17b041f2e0859d558ca717eb2cb807dc61:models/watch_list.js
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,

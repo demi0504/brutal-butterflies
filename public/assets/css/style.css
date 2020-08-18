@@ -1,20 +1,28 @@
 body { 
+<<<<<<< HEAD
   /* background: url(../images/popcorn_bucketlist.png) no-repeat center center fixed;  */
+=======
+  background: url(../images/movie.jpg) no-repeat center center fixed; 
+>>>>>>> 87dfda17b041f2e0859d558ca717eb2cb807dc61
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: 'Playfair Display', serif;
 }
 
 #log-in-container {
   border: 5px solid black;
-  background-color: white;
+  background-color:whitesmoke;
   margin: auto;
   width: 50%;
-  padding: 10px;
-};
+  padding: 20px;
+  margin-top: 80px;
+}
+
+
 
 form.signup,
 form.login {
   margin-top: 50px;
-};
+}
