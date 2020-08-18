@@ -17,15 +17,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     genre: {
-      type: DataTypes.string(30),
+      type: DataTypes.STRING(30),
       allowNull: false
     },
     length: {
-      type: DataTypes.string(30),
+      type: DataTypes.STRING(30),
       allowNull: false
     },
     actors: {
-      type: DataTypes.string(1000),
+      type: DataTypes.STRING(1000),
       allowNull: false
     },
     poster: {
