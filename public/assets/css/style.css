@@ -1,5 +1,9 @@
 body { 
+<<<<<<< HEAD
+  /* background: url(../images/popcorn_bucketlist.png) no-repeat center center fixed;  */
+=======
   background: url(../images/movie.jpg) no-repeat center center fixed; 
+>>>>>>> 87dfda17b041f2e0859d558ca717eb2cb807dc61
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
