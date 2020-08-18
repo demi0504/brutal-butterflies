@@ -1,7 +1,6 @@
 const Sequelize = require("sequelize");
-
 module.exports = function(sequelize, DataTypes) {
-  const watchList = sequelize.define("Watch_list", {
+  const Movie = sequelize.define("Movie", {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -17,23 +16,19 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     genre: {
-      type: DataTypes.string(30),
+      type: DataTypes.STRING(30),
       allowNull: false
     },
     length: {
-      type: DataTypes.string(30),
+      type: DataTypes.STRING(30),
       allowNull: false
     },
     actors: {
-      type: DataTypes.string(1000),
+      type: DataTypes.STRING(1000),
       allowNull: false
     },
     poster: {
       type: DataTypes.TEXT,
-      allowNull: false
-    },
-    plot: {
-      type: DataTypes.STRING(1000),
       allowNull: false
     },
     trailer: {
@@ -43,16 +38,6 @@ module.exports = function(sequelize, DataTypes) {
     rottenTom: {
       type: DataTypes.STRING(100),
       allowNull: false
-    },
-    watched: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false
-    },
-    favorite: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false
     },
     createdAt: {
       type: DataTypes.DATE,
@@ -66,5 +51,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return watchList;
+  return Movie;
 };

@@ -52,42 +52,45 @@ module.exports = function(app) {
   });
 
   // Route to retrieve all movies on watchlist
-  app.get("/api/unwatched/watchlist", (req, res) => {
+  app.get("/watchlist", (req, res) => {
     console.log("unwatched route hit");
-    db.WatchList.findAll({
-      where: {
-        watched: false
-      }
-    }).then(results => {
+    db.Movie.findAll({}).then(results => {
       const hbsObject = {
-        movies: results
+        watchlist: results
       };
       // Redirect or render here to home/members page
       res.render("index", hbsObject);
     });
   });
 
-  // Route to update movie from unwatched to watched
-  app.put("/api/:id", (req, res) => {
-    console.log("update route hit");
-    db.WatchList.update({
-      watched: true
-    }, {
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(results => {
-        return res.json(results);
+  // // Route to add movie to favorites
+  // app.put("/api/fav/:id", (req, res) => {
+  //   console.log("fav update route hit");
+  //   db.WatchList.update({
+  //     favorite: true
+  //   }, {
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   })
+  //     .then(results => {
+  //       return res.json(results);
+  //     })
+  //     .catch(error => {
+  //       return res.json(error);
+  //     });
+  // });
+
+  // Route to add movie to user watchlist
+  app.post("/user/:id/watchlist", (req, res) => {
+    const newMovie = req.body;
+    db.Movie.create(newMovie)
+      .then(result => {
+        res.json(result);
       })
       .catch(error => {
-        return res.json(error);
+        console.log("error: ", error);
+        res.json(error);
       });
   });
-
-  // Route to add movie to favorites
-  // Route to show all favorites
-  // app.get("/api/favorites", (req, res) => {
-  //   console.log("favorites route hit");
-  // })
 };

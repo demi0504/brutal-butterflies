@@ -29,6 +29,9 @@ Object.keys(db).forEach(function(modelName) {
     db[modelName].associate(db);
   }
 });
+// many to many association for users to have many movies on the watchlist
+db.User.belongsToMany(db.Movie, { through: "Watchlist" });
+db.Movie.belongsToMany(db.User, { through: "Watchlist" });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
