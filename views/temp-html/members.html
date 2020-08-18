@@ -19,10 +19,24 @@
     </div>
   </div>
 </nav>
-  <div class="container">
+  <div class="container" id="log-in-container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome! Lets get started! <span class="member-name"></span></h2>
+        <form>
+          <h2 for="searchInput">Search for a movie</h2>
+          <div class="form-group">
+            <input type="searchBox" class="form-control form-control-sm " id="movieSearch"
+                aria-describedby="movieSearch" placeholder="The Goonies">
+
+          </div>
+
+          <button type="submit" id="search" class="btn btn-primary btn-danger">Search</button>
+
+          <br>
+          <br>
+
+          <a href = "" class="btn btn-warning"> Add new Movie</a>
+      </form>
       </div>
     </div>
   </div>
