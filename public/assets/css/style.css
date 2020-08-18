@@ -4,6 +4,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: 'Playfair Display', serif;
 }
 
 #log-in-container {
@@ -16,7 +17,8 @@ body {
 }
 
 
+
 form.signup,
 form.login {
   margin-top: 50px;
-};
+}
