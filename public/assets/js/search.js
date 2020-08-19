@@ -7,7 +7,14 @@ $(document).ready(() => {
 
   const resultsList = $("#searchResults");
   mockResults.results.forEach(result => {
-    const displayResult = `<div class="movie-result"><p class="title">${result.original_title}</p><p class="movie-id">${result.id}</p>
+    const displayResult = `<div class="movie-result">
+    <li class="title">${result.Title}</li>
+    <li class="movie-plot">${result.Plot}</li>
+    <img class="movie-poster" src="${result.Poster}"></img>
+    <li class="movie-genre">${result.Genre}</li>
+    <li class="movie-length">${result.Runtime}</li>
+    <li class="movie-actors">${result.Actors}</li>
+    <li class="movie-rottenTom">${result.Ratings[1].Value}</li>
     <button class="add-to-watchlist" id="${result.id}">Add To Watchlist</button></div>`;
     resultsList.append(displayResult);
   });
