@@ -23,7 +23,7 @@ npm install
 
 Deployed on Heroku
 
-## :computer: Built With 
+## :computer: Built With: 
 
 Node.js
 NPM
