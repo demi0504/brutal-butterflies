@@ -1,12 +1,17 @@
-# Welcome to **Popcorn Bucket List** :movie_camera:
+# Welcome to **"Popcorn Bucket List"** :movie_camera:
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 > Popcorn Bucket List is a simple app created with Node.js to serve as a virtual database (a bucketlist) containing movies that the user intends to watch and movies that the user has watched, while also presenting information about these movies. 
 
-> I love watching movies. It breaks up the monotony of the road and momentarily takes   you somewhere else.
->
+** "I love watching movies. It breaks up the monotony of the road and momentarily takes you somewhere else." - Santigold **
+
+<p align="center">
+  <img src="https://www.instagram.com/p/CEDXyhvjd4g/?utm_source=ig_web_copy_link" width="350" title="Popcorn Bucket List">
+  <img src="https://www.instagram.com/p/CEDXyhvjd4g/?utm_source=ig_web_copy_link" width="350" alt="accessibility text">
+</p>
+
 
 ### :movie_camera: [Homepage]( )
 
@@ -19,17 +24,21 @@ npm install
 
 ```
 
-## Usage
+## :arrow_up_small: Usage
 
 Deployed on Heroku
 
 ## :computer: Built With: 
 
-Node.js
-NPM
-Express.js
-Sequelize
-mySQL
+- Node.js
+- NPM
+- Express.js
+- Sequelize
+- mySQL
+- Passport.js
+- Handlebars
+- jQuery
+- Bootstrap
 
 ## :crystal_ball: Future Development 
 
