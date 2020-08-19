@@ -5,7 +5,7 @@
 
 > Popcorn Bucket List is a simple app created with Node.js to serve as a virtual database (a bucketlist) containing movies that the user intends to watch and movies that the user has watched, while also presenting information about these movies. 
 
->**_"I love watching movies. It breaks up the monotony of the road and momentarily takes you somewhere else." - Santigold _**
+**_"I love watching movies. It breaks up the monotony of the road and momentarily takes you somewhere else." - Santigold _**
 
 
 
@@ -21,7 +21,7 @@ npm install
 
 ```
 
-## Usage
+## :arrow_up_small: Usage
 
 Deployed on Heroku
 
