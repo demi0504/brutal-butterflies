@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     trailer: {
       type: DataTypes.STRING(255),
-      allowNull: false
+      allowNull: true
     },
     rottenTom: {
       type: DataTypes.STRING(100),
