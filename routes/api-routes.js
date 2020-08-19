@@ -52,7 +52,7 @@ module.exports = function(app) {
   });
 
   // Route to retrieve all movies on watchlist
-  app.get("/watchlist", (req, res) => {
+  app.get("/watch-list", (req, res) => {
     console.log("unwatched route hit");
     db.Movie.findAll({}).then(results => {
       const hbsObject = {
@@ -82,7 +82,7 @@ module.exports = function(app) {
   // });
 
   // Route to add movie to user watchlist
-  app.post("/user/:id/watchlist", (req, res) => {
+  app.post("/user/:id/watch-list", (req, res) => {
     const newMovie = req.body;
     db.Movie.create(newMovie)
       .then(result => {
