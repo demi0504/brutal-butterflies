@@ -59,7 +59,7 @@ module.exports = function(app) {
         watchlist: results
       };
       // Redirect or render here to home/members page
-      res.render("index", hbsObject);
+      res.render("watch-list", hbsObject);
     });
   });
 
