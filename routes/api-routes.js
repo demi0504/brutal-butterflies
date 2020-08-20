@@ -51,34 +51,19 @@ module.exports = function(app) {
     }
   });
 
-  // Route to retrieve all movies on watchlist
-  app.get("/watch-list", (req, res) => {
-    console.log("unwatched route hit");
-    db.Movie.findAll({}).then(results => {
-      const hbsObject = {
-        watchlist: results
-      };
-      // Redirect or render here to home/members page
-      res.render("watch-list", hbsObject);
-    });
-  });
-
-  // // Route to add movie to favorites
-  // app.put("/api/fav/:id", (req, res) => {
-  //   console.log("fav update route hit");
-  //   db.WatchList.update({
-  //     favorite: true
-  //   }, {
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   })
-  //     .then(results => {
-  //       return res.json(results);
-  //     })
-  //     .catch(error => {
-  //       return res.json(error);
-  //     });
+  // // Route to retrieve all movies on watchlist
+  // app.get("/api/watchlist", (req, res) => {
+  //   console.log("unwatched route hit");
+  //   db.Movie.findAll({
+  //     where: //userid=req.params.id?
+      
+  //   }).then(results => {
+  //     const hbsObject = {
+  //       watchlist: results
+  //     };
+  //     // Redirect or render here to home/members page
+  //     res.render("watch-list", hbsObject);
+  //   });
   // });
 
   // Route to add movie to user watchlist
