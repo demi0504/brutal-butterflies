@@ -36,7 +36,7 @@ $(document).ready(() => {
         <br>
         <img class="rottenTom" src="/assets/images/rotten.png">${result.Ratings[1].Value}
         </div></div>
-        <button class="add-to-watchlist" id="${result.Title}">Add To Watchlist</button></div>`;
+        <button class="btn btn-danger add-to-watchlist" id="${result.id}">Add To Watchlist</button></div>`;
       resultsList.append(displayResult);
     });
   });
@@ -53,6 +53,12 @@ $(document).ready(() => {
     };
     addToWatchList(movieObj);
   });
+  
+  // clears all search results off page
+  $("input").click(() => {
+    $("#searchResults").empty();
+  });
+
 });
 
 // post request to correct route
