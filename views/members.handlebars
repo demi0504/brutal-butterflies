@@ -8,7 +8,7 @@
 </nav>
   <div class="container" id="log-in-container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-6 offset-md-3">
 
         <form>
           <h2 for="searchInput">Let's Find a Movie</h2>
@@ -20,7 +20,9 @@
           {{!-- I'm changing the id here to search-btn (Jordan) --}}
           <button type="submit" id="search-btn" class="btn btn-primary btn-danger">Search</button>
           
-          <div id="searchResults"></div>
+          <div id="searchResults">
+            {{!--img--}}
+          </div>
           <br>
           <br>
           <input type="reset" class="btn btn-warning" value="Clear Movie Search">
