@@ -51,6 +51,12 @@ $(document).ready(() => {
     };
     addToWatchList(movieObj);
   });
+  
+  // clears all search results off page
+  $("input").click(() => {
+    $("#searchResults").empty();
+  });
+
 });
 
 // post request to correct route
