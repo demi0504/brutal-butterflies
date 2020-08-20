@@ -13,6 +13,62 @@
       </div>
     </div>
   </div>
+
+
+<div class="row" id="movies-container">
+  {{!-- movies on the watchlist will go here --}}
+    {{#each movie}}
+      {{#unless this.watched}}
+
+      <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" id="movie">
+          <div class="box gallery">
+            <img class="im-responsive" id="new-movie" src={{this.movie_poster}}>
+            <a onClick="modalDisplay({{@index}})" class="overlay link" id="trigger-modal{{@index}}"></a>
+              <div class="info">
+                <div class="foot">
+                  <p id="movie-title">{{this.movie_name}}</p>
+                  <i class="line"></i>
+                  <p id="runtime">{{this.movie_time}}</p>
+                </div>
+              </div>
+          </div>
+      </div>
+
+     <div id="movieModal{{@index}}" class="modal">
+
+        <div class="modal-content">
+
+        <div class="row" id="modal-body">
+            {{!-- movie poster here --}}
+            <div class="col-5">
+              <img src="{{this.movie_poster}}" id="this-movie-poster">
+            </div>
+
+            <div class="col-7" id="movie-scroll">
+
+              <span id="close{{@index}}" class="close"></span>
+
+              <div class="container" id="modal-movie-box">
+                  {{!-- title --}}
+                  <h2 class="movie-title" id="modal-title">{{this.movie_name}}</h2>
+                  {{!-- year, length, genre --}}
+                  <div class="row" id="genre-box">
+                      <div class="col-2" id="year">{{this.movie_year}}</div>
+                      <div class="col-2" id="time">{{this.movie_time}}</div>
+                      <div class="col-6" id="genre">{{this.movie_genre}}</div>
+                  </div>
+                  
+              </div>
+
+            </div>
+
+
+        </div>
+
+        </div>
+
+     </div> 
+</div>
   
 <script src="/assets/js/watch-list.js"></script>
 <script src="/assets/js/mocksearch.js"></script>
