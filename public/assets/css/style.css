@@ -21,3 +21,47 @@ form.signup,
 form.login {
   margin-top: 55px;
 }
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.movie-result {
+  margin: 10px;
+}
+
+.movie-result:hover .image {
+  opacity: 0.3;
+}
+
+.movie-result:hover .middle{
+  opacity: 1;
+}
+
+.rottenTom {
+  width: 25px;
+  height: 25px;
+}
+
+.text {
+  background-color:	#F5F5F5;
+  color: black;
+  font-size: 14px;
+  padding: 16px 32px;
+}

@@ -26,14 +26,16 @@ $(document).ready(() => {
       console.log(result);
       const resultsList = $("#searchResults");
       const displayResult = `<div class="movie-result">
-        <li class="title">${result.Title}</li>
-        <li class="movie-plot">${result.Plot}</li>
-        <img class="movie-poster" src="${result.Poster}"></img>
-        <li class="movie-genre">${result.Genre}</li>
-        <li class="movie-length">${result.Runtime}</li>
-        <li class="movie-actors">${result.Actors}</li>
-        <li class="movie-rottenTom">${result.Ratings[1].Value}</li>
+        <img class="movie-poster image" src="${result.Poster}"></img>
+        <div class="middle"><div class="text">
+        ${result.Title}
         <br>
+        ${result.Genre}
+        <br>
+        ${result.Runtime}
+        <br>
+        <img class="rottenTom" src="/assets/images/rotten.png">${result.Ratings[1].Value}
+        </div></div>
         <button class="btn btn-danger add-to-watchlist" id="${result.id}">Add To Watchlist</button></div>`;
       resultsList.append(displayResult);
     });
@@ -62,3 +64,7 @@ $(document).ready(() => {
 // post request to correct route
 // send movie object in post request
 // Handle response
+/* <li class="movie-genre">${result.Genre}</li>
+        <li class="movie-length">${result.Runtime}</li>
+        <li class="movie-actors">${result.Actors}</li>
+        <li class="movie-rottenTom">${result.Ratings[1].Value}</li> */
