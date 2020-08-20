@@ -33,7 +33,8 @@ $(document).ready(() => {
         <li class="movie-length">${result.Runtime}</li>
         <li class="movie-actors">${result.Actors}</li>
         <li class="movie-rottenTom">${result.Ratings[1].Value}</li>
-        <button class="add-to-watchlist" id="${result.id}">Add To Watchlist</button></div>`;
+        <br>
+        <button class="btn btn-danger add-to-watchlist" id="${result.id}">Add To Watchlist</button></div>`;
       resultsList.append(displayResult);
     });
   });
