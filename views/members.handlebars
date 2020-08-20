@@ -11,7 +11,7 @@
       <div class="col-md-6 col-md-offset-3">
 
         <form>
-          <h2 for="searchInput">Search for a Movie</h2>
+          <h2 for="searchInput">Let's Find a Movie</h2>
           <div class="form-group">
             <input class="form-control form-control-sm" type="text" name="movieSearch" id="movieSearch"
                 aria-describedby="movieSearch" placeholder="The Goonies">
@@ -19,13 +19,13 @@
           </div>
           {{!-- I'm changing the id here to search-btn (Jordan) --}}
           <button type="submit" id="search-btn" class="btn btn-primary btn-danger">Search</button>
-
+          
+          <div id="searchResults"></div>
           <br>
           <br>
-
-          <a href = "/watch-list" class="btn btn-warning"> Add new Movie</a>
-      </form>
-      <div id="searchResults"></div>
+          <input type="reset" class="btn btn-warning" value="Clear Movie Search">
+        
+        </form>
       </div>
     </div>
   </div>
