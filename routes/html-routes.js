@@ -22,4 +22,9 @@ module.exports = function(app) {
   app.get("/members", (req, res) => {
     res.render("members");
   });
+
+  // watchlist route
+  app.get("/watch-list", (req, res) => {
+    res.render("watch-list");
+  });
 };
