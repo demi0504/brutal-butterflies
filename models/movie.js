@@ -14,7 +14,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     genre: {
+<<<<<<< HEAD
+      type: DataTypes.STRING(1000),
+=======
       type: DataTypes.STRING(100),
+>>>>>>> 1319df71351f116218d44f9bbc1923ae512b09ce
       allowNull: true
     },
     length: {
@@ -31,11 +35,28 @@ module.exports = function(sequelize, DataTypes) {
     },
     poster: {
       type: DataTypes.TEXT,
+<<<<<<< HEAD
+      allowNull: true
+    },
+    trailer: {
+      type: DataTypes.STRING(1000),
+      allowNull: true
+    },
+    // watched: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false,
+    //   defaultValue: false
+    // },
+    imdb: {
+      type: DataTypes.STRING(1000),
+      allowNull: true
+=======
       allowNull: true,
       defaultValue: "John Doe"
+>>>>>>> 1319df71351f116218d44f9bbc1923ae512b09ce
     },
     rottenTom: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(1000),
       allowNull: true
     }
   });
