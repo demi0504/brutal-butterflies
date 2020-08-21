@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     genre: {
-      type: DataTypes.STRING(30),
+      type: DataTypes.STRING(1000),
       allowNull: true
     },
     length: {
@@ -34,15 +34,20 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     trailer: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(1000),
       allowNull: true
     },
+    // watched: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false,
+    //   defaultValue: false
+    // },
     imdb: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(1000),
       allowNull: true
     },
     rottenTom: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(1000),
       allowNull: true
     }
   });
