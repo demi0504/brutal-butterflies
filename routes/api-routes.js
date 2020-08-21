@@ -63,6 +63,16 @@ module.exports = function(app) {
         res.json(error);
       });
   });
+
+  //route to get movies for watchlist
+  app.get("/watch-list", (req, res) => {
+    db.Movie.findAll({}).then(results => {
+      const hbsObject = {
+        movie: results
+      };
+      res.render("watch-list", hbsObject);
+    });
+  });
 };
 
 // // Route to retrieve all movies on watchlist
