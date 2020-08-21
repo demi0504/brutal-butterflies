@@ -1,17 +1,27 @@
-const express = require("express");
-const router = express.Router();
-const request = require("request");
+// const express = require("express");
+// const router = express.Router();
+// const request = require("request");
 
-const db = require("../models");
+// const db = require("../models");
 
-router.post("/api/new/movie", function(req, res) {
-  var movieName = req.body.name;
+// router.get("/watch-list", (req, res) => {
+//   db.Movie.findAll({
+//     order: "title ASC"
+//   }).then(data => {
+//     var hbsObject = {
+//       movies: data
+//     };
+//     res.render("watch-list", hbsObject);
+//   });
+// });
 
-  var queryUrl = "https://api.themoviedb.org/3/search/movie?api_key=884c8dc17ee0d42ebc06cde6a8e7bc10&query=" + movieName;
-
-  request(queryUrl, function(error, response, body) {
-    if (!error && JSON.parse(body).Response !== "False") {
-      console.log(JSON.parse(body));
-    }
-  });
-});
+// router.get("/rating", (req, res) => {
+//   db.Movie.findAll({
+//     order: "rottenTom DESC"
+//   }).then(data => {
+//     var hbsObject = {
+//       movies: data
+//     };
+//     res.render("watch-list", hbsObject);
+//   });
+// });
