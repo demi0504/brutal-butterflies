@@ -29,7 +29,7 @@ $(document).ready(() => {
         <br>
         <img class="rottenTom" src="/assets/images/rotten.png">${result.Ratings[1].Value}
         </div></div>
-        <button class="btn add-to-watchlist" id="add-to-watchlist">Add To Watchlist</button></div>`;
+        <button class="btn add-to-watchlist btn-danger" id="add-to-watchlist">Add To Watchlist</button></div>`;
       resultsList.append(displayResult);
     });
   });
