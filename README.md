@@ -18,9 +18,10 @@ npm install
 
 ```
 
-## :arrow_up_small: Usage
+## :arrow_up_small: [Usage](https://still-reef-39883.herokuapp.com/)
 
-Deployed on Heroku
+Deployed on Heroku:
+
 
 ## :computer: Built With: 
 
