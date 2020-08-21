@@ -27,6 +27,8 @@ $(document).ready(() => {
         <br>
         <div class="run-time">${result.Runtime}</div>
         <br>
+        <div class="actors">${result.Actors}</div>
+        <br>
         <img class="rottenTom" src="/assets/images/rotten.png">${result.Ratings[1].Value}
         </div></div>
         <button class="btn add-to-watchlist" id="add-to-watchlist">Add To Watchlist</button></div>`;
@@ -50,13 +52,15 @@ $(document).ready(() => {
     const movieRuntime = movieContainer.find(".run-time").text();
     const movieRotten = movieContainer.find(".rottenTom").text();
     const moviePlot = movieContainer.find(".plot").text();
+    const movieActors = movieContainer.find(".actors").text();
     // send movie object in post request
     const movieObj = {
       title: movieTitle,
       plot: moviePlot,
       genre: movieGenre,
       length: movieRuntime,
-      rottenTom: movieRotten
+      rottenTom: movieRotten,
+      actors: movieActors
     };
     addToMovie(movieObj);
   });
