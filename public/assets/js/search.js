@@ -17,35 +17,46 @@ $(document).ready(() => {
       console.log(result);
       const resultsList = $("#searchResults");
       const displayResult = `<div class="movie-result">
-        <img class="movie-poster image" src="${result.Poster}"></img>
+        <img class="movie-poster image" src="${result.Poster}">
         <div class="middle"><div class="text">
         <div class="title">${result.Title}</div>
         <br>
-        ${result.Genre}
+        <div class="plot">${result.Plot}</div>
         <br>
-        ${result.Runtime}
+        <div class="genre">${result.Genre}</div>
+        <br>
+        <div class="run-time">${result.Runtime}</div>
         <br>
         <img class="rottenTom" src="/assets/images/rotten.png">${result.Ratings[1].Value}
         </div></div>
-        <button class="btn btn-danger add-to-watchlist" id="${result.Title}">Add To Watchlist</button></div>`;
+        <button class="btn add-to-watchlist" id="add-to-watchlist">Add To Watchlist</button></div>`;
       resultsList.append(displayResult);
     });
   });
   // route add new movie to movie table
-  const addToMovie = (movie) => {
-    $.post("/user/movie", movie).then(result => {
+  const addToMovie = movie => {
+    $.post("/api/newmovie", movie).then(result => {
       console.log("api result", result);
     });
   };
   // Click handler to watchlist button
-  $(".add-to-watchlist").click(event => {
+  $(document).on("click", ".add-to-watchlist", event => {
     event.preventDefault();
     const target = event.target;
     // create movie object
     const movieContainer = $(target).parents(".movie-result");
     const movieTitle = movieContainer.find(".title").text();
+    const movieGenre = movieContainer.find(".genre").text();
+    const movieRuntime = movieContainer.find(".run-time").text();
+    const movieRotten = movieContainer.find(".rottenTom").text();
+    const moviePlot = movieContainer.find(".plot").text();
+    // send movie object in post request
     const movieObj = {
-      title: movieTitle
+      title: movieTitle,
+      plot: moviePlot,
+      genre: movieGenre,
+      length: movieRuntime,
+      rottenTom: movieRotten
     };
     addToMovie(movieObj);
   });
@@ -55,11 +66,3 @@ $(document).ready(() => {
     $("#searchResults").empty();
   });
 });
-
-// post request to correct route
-// send movie object in post request
-// Handle response
-/* <li class="movie-genre">${result.Genre}</li>
-        <li class="movie-length">${result.Runtime}</li>
-        <li class="movie-actors">${result.Actors}</li>
-        <li class="movie-rottenTom">${result.Ratings[1].Value}</li> */

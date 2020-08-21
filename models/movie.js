@@ -1,12 +1,6 @@
 const Sequelize = require("sequelize");
 module.exports = function(sequelize, DataTypes) {
   const Movie = sequelize.define("Movie", {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-      allowNull: false
-    },
     title: {
       type: DataTypes.STRING(100),
       allowNull: false
@@ -17,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     year: {
       type: DataTypes.INTEGER(4),
-      allowNull: false
+      allowNull: true
     },
     genre: {
       type: DataTypes.STRING(30),
@@ -29,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     director: {
       type: DataTypes.STRING(1000),
-      allowNull: false
+      allowNull: true
     },
     actors: {
       type: DataTypes.STRING(1000),
@@ -45,21 +39,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     imdb: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     rottenTom: {
       type: DataTypes.STRING(100),
       allowNull: true
-    },
-    createdAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
-    },
-    updatedAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     }
   });
 
