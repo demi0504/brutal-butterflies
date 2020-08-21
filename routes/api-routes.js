@@ -51,7 +51,21 @@ module.exports = function(app) {
     }
   });
 
-  // // Route to retrieve all movies on watchlist
+  // Route to add movie to user watchlist
+  app.post("/api/newmovie", (req, res) => {
+    const newMovie = req.body;
+    db.Movie.create(newMovie)
+      .then(result => {
+        res.json(result);
+      })
+      .catch(error => {
+        console.log("error: ", error);
+        res.json(error);
+      });
+  });
+};
+
+// // Route to retrieve all movies on watchlist
   // app.get("/api/watchlist", (req, res) => {
   //   console.log("unwatched route hit");
   //   db.Movie.findAll({
@@ -65,17 +79,3 @@ module.exports = function(app) {
   //     res.render("watch-list", hbsObject);
   //   });
   // });
-
-  // Route to add movie to user watchlist
-  app.post("/user/movie", (req, res) => {
-    const newMovie = req.body;
-    db.Movie.create(newMovie)
-      .then(result => {
-        res.json(result);
-      })
-      .catch(error => {
-        console.log("error: ", error);
-        res.json(error);
-      });
-  });
-};
