@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     plot: {
       type: DataTypes.STRING(1000),
-      allowNull: false
+      allowNull: true
     },
     year: {
       type: DataTypes.INTEGER(4),
@@ -21,11 +21,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     genre: {
       type: DataTypes.STRING(30),
-      allowNull: false
+      allowNull: true
     },
     length: {
       type: DataTypes.STRING(30),
-      allowNull: false
+      allowNull: true
     },
     director: {
       type: DataTypes.STRING(1000),
@@ -33,11 +33,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     actors: {
       type: DataTypes.STRING(1000),
-      allowNull: false
+      allowNull: true
     },
     poster: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     },
     trailer: {
       type: DataTypes.STRING(255),
@@ -49,7 +49,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     rottenTom: {
       type: DataTypes.STRING(100),
-      allowNull: false
+      allowNull: true
     },
     createdAt: {
       type: DataTypes.DATE,

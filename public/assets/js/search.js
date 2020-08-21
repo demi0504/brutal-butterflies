@@ -1,18 +1,9 @@
-const searchBtn = $("#search-btn");
-// const userInput = $("#movieSearch");
-
-// require dotenv to hide our api key
-// const dotenv = require("dotenv").config();
-// require('dotenv').config();
-// const apiKey = process.env.API_KEY;
-// console.log(apiKey);
-
 $(document).ready(() => {
-  const addToWatchList = (movie) => {
-    $.post("/user/3/watchlist", movie).then(result => {
-      console.log("api result", result);
-    });
-  };
+  // require dotenv to hide our api key
+  // const dotenv = require("dotenv").config();
+  // // require('dotenv').config();
+  // const apiKey = process.env.API_KEY;
+  // console.log(apiKey);
   // ajax call to return the movie info
   $("#search-btn").click(event => {
     event.preventDefault();
@@ -28,7 +19,7 @@ $(document).ready(() => {
       const displayResult = `<div class="movie-result">
         <img class="movie-poster image" src="${result.Poster}"></img>
         <div class="middle"><div class="text">
-        ${result.Title}
+        <div class="title">${result.Title}</div>
         <br>
         ${result.Genre}
         <br>
@@ -36,11 +27,16 @@ $(document).ready(() => {
         <br>
         <img class="rottenTom" src="/assets/images/rotten.png">${result.Ratings[1].Value}
         </div></div>
-        <button class="btn btn-danger add-to-watchlist" id="${result.id}">Add To Watchlist</button></div>`;
+        <button class="btn btn-danger add-to-watchlist" id="${result.Title}">Add To Watchlist</button></div>`;
       resultsList.append(displayResult);
     });
   });
-
+  // route add new movie to movie table
+  const addToMovie = (movie) => {
+    $.post("/user/movie", movie).then(result => {
+      console.log("api result", result);
+    });
+  };
   // Click handler to watchlist button
   $(".add-to-watchlist").click(event => {
     event.preventDefault();
@@ -51,14 +47,13 @@ $(document).ready(() => {
     const movieObj = {
       title: movieTitle
     };
-    addToWatchList(movieObj);
-  });
-  
-  // clears all search results off page
-  $("input").click(() => {
-    $("#searchResults").empty();
+    addToMovie(movieObj);
   });
 
+  // clears all search results off page
+  $("#reset").click(() => {
+    $("#searchResults").empty();
+  });
 });
 
 // post request to correct route

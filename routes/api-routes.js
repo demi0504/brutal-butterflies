@@ -67,7 +67,7 @@ module.exports = function(app) {
   // });
 
   // Route to add movie to user watchlist
-  app.post("/user/:id/watch-list", (req, res) => {
+  app.post("/user/movie", (req, res) => {
     const newMovie = req.body;
     db.Movie.create(newMovie)
       .then(result => {
