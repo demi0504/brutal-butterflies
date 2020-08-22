@@ -33,7 +33,6 @@ $(document).ready(() => {
         <br>
         <img class="rottenTom" src="/assets/images/rotten.png">${result.Ratings[1].Value}
         <br>
-        <img class="imdb">${result.Ratings[0].Value}
         </div></div>
         <button class="btn add-to-watchlist btn-danger" id="add-to-watchlist">Add To Watchlist</button></div>`;
       resultsList.append(displayResult);
@@ -58,8 +57,8 @@ $(document).ready(() => {
     const moviePlot = movieContainer.find(".plot").text();
     const movieActors = movieContainer.find(".actors").text();
     const moviePoster = document.getElementById("movie-poster").src;
-    const movieYear = movieYear.find(".year").text();
-    const movieImdb = movieImdb.find("imdb").text();
+    // const movieYear = movieYear.find(".year").text();
+    // const movieImdb = movieImdb.find("imdb").text();
     // send movie object in post request
     const movieObj = {
       title: movieTitle,
@@ -69,8 +68,8 @@ $(document).ready(() => {
       rottenTom: movieRotten,
       actors: movieActors,
       poster: moviePoster,
-      year: movieYear,
-      imdb: movieImdb
+      // year: movieYear,
+      // imdb: movieImdb
     };
     addToMovie(movieObj);
   });
