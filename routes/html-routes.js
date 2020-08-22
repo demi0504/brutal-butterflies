@@ -18,21 +18,25 @@ module.exports = function(app) {
   });
 
   // Here we've add our isAuthenticated middleware to this route.
-  // Dont forget to add isAuthenticated function back in params
-  app.get("/members", (req, res) => {
+  app.get("/members", isAuthenticated, (req, res) => {
     res.render("members");
   });
 
-  // watchlist route
+  // Watchlist route
   app.get("/watch-list", (req, res) => {
     db.Movie.findAll({}).then(results => {
       // console.log("results", results);
       const data = {
-        movies: results.map(movie => ({title: movie.dataValues.title, plot: movie.dataValues.plot}))
+        movies: results.map(movie => ({
+          title: movie.dataValues.title,
+          plot: movie.dataValues.plot,
+          actors: movie.dataValues.actors,
+          rottenTom: movie.dataValues.rottenTom,
+          genre: movie.dataValues.genre
+        }))
       };
       console.log("data", data);
       res.render("watch-list", data);
     });
-    // Redirect or render here to home/members page
   });
 };
