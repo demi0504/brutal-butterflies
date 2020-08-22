@@ -1,3 +1,5 @@
+// const dotenv = require("dotenv").config({path: __dirname + "/.env"});
+
 $(document).ready(() => {
   // require dotenv to hide our api key
   // const dotenv = require("dotenv").config();
@@ -34,6 +36,10 @@ $(document).ready(() => {
         <img class="rottenTom" src="/assets/images/rotten.png">${result.Ratings[1].Value}
         <br>
         </div></div>
+        <br>
+        <br>
+        <br>
+        <br>
         <button class="btn add-to-watchlist btn-danger" id="add-to-watchlist">Add To Watchlist</button></div>`;
       resultsList.append(displayResult);
     });
