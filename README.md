@@ -7,9 +7,8 @@
 
 **"I love watching movies. It breaks up the monotony of the road and momentarily takes you somewhere else." - Santigold**
 
-### :movie_camera: [Homepage]( )
+### :movie_camera: [Homepage](https://still-reef-39883.herokuapp.com/ )
 
-### ✨ [Demo]( )
 
 ## :arrow_down: Install 
 
