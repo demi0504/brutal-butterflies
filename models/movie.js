@@ -1,4 +1,4 @@
-const Sequelize = require("sequelize");
+const sequelize = require("sequelize");
 module.exports = function(sequelize, DataTypes) {
   const Movie = sequelize.define("Movie", {
     title: {
@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     genre: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(1000),
       allowNull: true
     },
     length: {
@@ -31,11 +31,24 @@ module.exports = function(sequelize, DataTypes) {
     },
     poster: {
       type: DataTypes.TEXT,
+      allowNull: true
+    },
+    trailer: {
+      type: DataTypes.STRING(1000),
+      allowNull: true
+    },
+    // watched: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false,
+    //   defaultValue: false
+    // },
+    imdb: {
+      type: DataTypes.STRING(1000),
       allowNull: true,
       defaultValue: "John Doe"
     },
     rottenTom: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(1000),
       allowNull: true
     }
   });
