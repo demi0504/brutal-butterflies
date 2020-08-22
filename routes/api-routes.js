@@ -65,27 +65,6 @@ module.exports = function(app) {
   });
 
   //route to get movies for watchlist
-  app.get("/watch-list", (req, res) => {
-    db.Movie.findAll({}).then(results => {
-      const hbsObject = {
-        movie: results
-      };
-      res.render("watch-list", hbsObject);
-    });
-  });
 };
 
 // // Route to retrieve all movies on watchlist
-  // app.get("/api/watchlist", (req, res) => {
-  //   console.log("unwatched route hit");
-  //   db.Movie.findAll({
-  //     where: //userid=req.params.id?
-      
-  //   }).then(results => {
-  //     const hbsObject = {
-  //       watchlist: results
-  //     };
-  //     // Redirect or render here to home/members page
-  //     res.render("watch-list", hbsObject);
-  //   });
-  // });
