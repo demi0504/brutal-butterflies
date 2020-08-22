@@ -22,7 +22,12 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
+);
 app.set("view engine", "handlebars");
 
 // Requiring our routes
@@ -39,3 +44,8 @@ db.sequelize.sync().then(() => {
     );
   });
 });
+// ,
+//     handlebars: allowInsecurePrototypeAccess(exphbs)
+//     const {
+//       allowInsecurePrototypeAccess
+//     } = require("@handlebars/allow-prototype-access");
