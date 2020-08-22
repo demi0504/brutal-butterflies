@@ -20,19 +20,116 @@
 
 <div class="row" id="movies-container">
   {{!-- movies on the watchlist will go here --}}
-    {{!-- {{#each movies}} --}}
-      <div>
-        {{#each movies}}
-        <h1>{{title}}</h1>
-        <h1>{{plot}}</h1>
-        {{else}}
-        <p>No movies available</p>
-        {{/each}}
+    {{#each movies}}
+
+      <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" id="movie">
+          <div class="box gallery">
+            <div class="card">
+            <img class="im-responsive" id="new-movie" src={{this.poster}}>
+            <a onClick="modalDisplay({{@index}})" class="overlay link" id="trigger-modal{{@index}}"></a>
+              <div class="info">
+                <div class="foot">
+                  <p id="movie-title">{{this.title}}</p>
+                  <i class="line"></i>
+                  <p id="length">{{this.length}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
+
+     <div id="movieModal{{@index}}" class="modal">
+
+        <div class="modal-content">
+
+        <div class="row" id="modal-body">
+            {{!-- movie poster here --}}
+            <div class="col-5">
+              <img src="{{this.poster}}" id="this-movie-poster">
+            </div>
+
+            <div class="col-7" id="movie-scroll">
+
+              <span id="close{{@index}}" class="close"></span>
+
+              <div class="container" id="modal-movie-box">
+                  {{!-- title --}}
+                  <h2 class="movie-title" id="modal-title">{{this.title}}</h2>
+                  {{!-- year, length, genre --}}
+                  <div class="row" id="genre-box">
+                      <div class="col-2" id="year">{{this.year}}</div>
+                      <div class="col-2" id="length">{{this.length}}</div>
+                      <div class="col-6" id="genre">{{this.genre}}</div>
+                  </div>
+                  {{!-- imdb and rotten tomatoes ratings --}}
+                  <div class="row" id="ratings">
+                      <div class="col-3" id="imdb">
+                          <img src="../public/assets/images/imdblogo.jpg" alt="imdb" id="imdb-symbol">
+                          <h5 class="imdb-text">{{this.imdb}}</h5>
+                      </div>
+                      <div class="col-3" id="rotten">
+                          <img src="../public/assets/images/rotten.png" alt="rotten tomatoes" id="rt-symbol">
+                          <h5 class="rotten-text">{{this.rottenTom}}</h5>
+                      </div>
+                  </div>
+                  {{!-- director --}}
+                  <div class="row">
+                      <div class="col-10" id="director">
+                          <p>
+                              <strong>Directed by:</strong>
+                              {{this.director}}
+                          </p>
+                      </div>
+                  </div>
+                  {{!-- cast --}}
+                  <div class="row">
+                      <div class="col-10" id="cast">
+                          <p>
+                              <strong>Starring:</strong>
+                              {{this.actors}}
+                          </p>
+                      </div>
+                  </div>
+                  {{!-- plot summary --}}
+                  <div class="row">
+                      <div class="col-10" id="plot">
+                          <p>
+                              <strong>Plot summary:</strong>
+                              {{this.plot}}
+                          </p>
+                      </div>
+                  </div>
+                  {{!-- mark movie as watched --}}
+                  <div class="row">
+                      <div class="col-md-3">
+                        <form action="/api/new/watched/{{this.id}}?_method=PUT" method="POST">
+                            <input type="hidden" name="watched" value="true">
+                            <button type="submit" class="btn btn-warning">Mark as watched</button>
+                        </form>
+                      </div>
+                      <div class="col-md-3">
+                        <form action="/api/new/delete/{{this.id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="watched" value="true">
+                            <button type="submit" class="btn btn-danger">Delete movie</button>
+                        </form>
+                      </div>
+
+                      <iframe id="trailer-box" src="https://www.youtube.com/embed/{{this.trailer}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+              </div>
+
+            </div>
+
+
+        </div>
+
+        </div>
+
+     </div> 
+
+{{/each}}
 </div>
 
-    {{/unless}}
-{{/each}}
   
 <script src="/assets/js/watch-list.js"></script>
 ​<script src="/assets/js/search.js"></script>
