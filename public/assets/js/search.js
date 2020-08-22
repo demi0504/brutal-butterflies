@@ -17,7 +17,7 @@ $(document).ready(() => {
       console.log(result);
       const resultsList = $("#searchResults");
       const displayResult = `<div class="movie-result">
-        <img class="movie-poster image" src="${result.Poster}">
+        <img id="movie-poster" src="${result.Poster}">
         <div class="middle"><div class="text">
         <div class="title">${result.Title}</div>
         <br>
@@ -25,11 +25,14 @@ $(document).ready(() => {
         <br>
         <div class="genre">${result.Genre}</div>
         <br>
+        <div class="year">${result.Year}</div>
+        <br>
         <div class="run-time">${result.Runtime}</div>
         <br>
         <div class="actors">${result.Actors}</div>
         <br>
         <img class="rottenTom" src="/assets/images/rotten.png">${result.Ratings[1].Value}
+        <br>
         </div></div>
         <button class="btn add-to-watchlist btn-danger" id="add-to-watchlist">Add To Watchlist</button></div>`;
       resultsList.append(displayResult);
@@ -53,6 +56,9 @@ $(document).ready(() => {
     const movieRotten = movieContainer.find(".rottenTom").text();
     const moviePlot = movieContainer.find(".plot").text();
     const movieActors = movieContainer.find(".actors").text();
+    const moviePoster = document.getElementById("movie-poster").src;
+    // const movieYear = movieYear.find(".year").text();
+    // const movieImdb = movieImdb.find("imdb").text();
     // send movie object in post request
     const movieObj = {
       title: movieTitle,
@@ -60,7 +66,10 @@ $(document).ready(() => {
       genre: movieGenre,
       length: movieRuntime,
       rottenTom: movieRotten,
-      actors: movieActors
+      actors: movieActors,
+      poster: moviePoster,
+      // year: movieYear,
+      // imdb: movieImdb
     };
     addToMovie(movieObj);
   });

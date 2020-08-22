@@ -32,7 +32,10 @@ module.exports = function(app) {
           plot: movie.dataValues.plot,
           actors: movie.dataValues.actors,
           rottenTom: movie.dataValues.rottenTom,
-          genre: movie.dataValues.genre
+          imdb: movie.dataValues.imdb,
+          genre: movie.dataValues.genre,
+          year: movie.dataValues.year,
+          poster: movie.dataValues.poster
         }))
       };
       console.log("data", data);

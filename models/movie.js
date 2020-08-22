@@ -45,7 +45,7 @@ module.exports = function(sequelize, DataTypes) {
     imdb: {
       type: DataTypes.STRING(1000),
       allowNull: true,
-      defaultValue: "John Doe"
+      // defaultValue: "John Doe"
     },
     rottenTom: {
       type: DataTypes.STRING(1000),
