@@ -45,8 +45,3 @@ db.sequelize.sync().then(() => {
     );
   });
 });
-// ,
-//     handlebars: allowInsecurePrototypeAccess(exphbs)
-//     const {
-//       allowInsecurePrototypeAccess
-//     } = require("@handlebars/allow-prototype-access");

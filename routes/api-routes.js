@@ -63,8 +63,4 @@ module.exports = function(app) {
         res.json(error);
       });
   });
-
-  //route to get movies for watchlist
 };
-
-// // Route to retrieve all movies on watchlist
