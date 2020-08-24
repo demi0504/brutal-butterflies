@@ -33,20 +33,20 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: true
     },
-    trailer: {
-      type: DataTypes.STRING(1000),
-      allowNull: true
-    },
+    // trailer: {
+    //   type: DataTypes.STRING(1000),
+    //   allowNull: true
+    // },
     // watched: {
     //   type: DataTypes.BOOLEAN,
     //   allowNull: false,
     //   defaultValue: false
     // },
-    imdb: {
-      type: DataTypes.STRING(1000),
-      allowNull: true,
-      // defaultValue: "John Doe"
-    },
+    // imdb: {
+    //   type: DataTypes.STRING(1000),
+    //   allowNull: true
+    //   // defaultValue: "John Doe"
+    // },
     rottenTom: {
       type: DataTypes.STRING(1000),
       allowNull: true
