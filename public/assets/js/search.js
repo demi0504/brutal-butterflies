@@ -13,7 +13,7 @@ $(document).ready(() => {
     const apiKey = "825b1cbb";
     console.log("userinput: ", userInput);
     $.ajax({
-      url: `http://www.omdbapi.com/?apikey=${apiKey}&t=` + userInput,
+      url: `https://www.omdbapi.com/?apikey=${apiKey}&t=` + userInput,
       method: "GET"
     }).then(result => {
       console.log(result);
